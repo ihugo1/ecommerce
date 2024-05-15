@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish';
+}
+ul{
+    list-style: none;
+}
+button{
+    border: none;
+    background: none;
+}
+/*************************************************************************************************************************/
+.fashion-store-logo{
+    display: block;
+    text-align: center;
+}
+.fashion-logo{
+    font-family: 'Philosopher';
+    font-size: 1.5rem;
+    line-height: -0.8;
+}
+.store-logo{
+    font-family: 'Fasthand';
+    font-size: 1.5rem;
+    line-height: 0.8;
+    color: rgb(220, 50, 80);
+}

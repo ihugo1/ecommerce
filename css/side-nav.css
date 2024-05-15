@@ -1,0 +1,28 @@
+.side-nav{
+    height: 100%;
+    width: 70%;
+    left: -70%;
+
+    position: fixed;
+
+    background-color: rgb(30, 30, 30);
+
+    transition: left 0.3s ease;
+}
+.side-nav-active{
+    left: 0;
+}
+.side-nav ul{
+    height: 100%;
+    padding: 2%  10% 60%;
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+
+.side-nav li{
+    color: white;
+    font-size: 1.4rem;
+}
