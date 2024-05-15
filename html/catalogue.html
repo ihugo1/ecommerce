@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion Store</title>
+    <title>Fashion Store | Catalogue</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
 
         <div class="nav-bar-middle">
             <ul>
-                <li>Catálogo</li>
+                <li>Inicio</li>
                 <li>Sucursales</li>
                 <li>Sobre Nosotros</li>
             </ul>
@@ -38,12 +38,36 @@
     </nav>
 
     <!-- header -->
-    <div class="header-main">
-        <img class="header-main-background" src="/img/banners/banner-main.jpg">
-        <div class="header-main-content">
-            <p>Ponte a la moda con nuestra última línea de ropa.</p>
-            <button>¡Compra ahora!</button>
+    <div class="header-catalogue">
+        <img class="header-catalogue-background" src="/img/banners/banner-catalogue.webp">
+        <div class="header-catalogue-content">
+            <p>Cátalogo.</p>
         </div>
+    </div>
+
+    <div class="catalogue-content">
+
+        <div class="filter-bar">
+            <label for="product-dropdown-menu">Filtrar por:</label>
+
+            <select id="products-dropdown-menu" name="product-dropdown-menu">
+                <option value="all">Todos</option>
+                <option value="shirt">Camisas</option>
+                <option value="accesory">Accesorios</option>
+                <option value="pant">Pantalones</option>
+                <option value="hat">Gorros</option>
+                <option value="jacket">Chaquetas</option>
+                <option value="dress">Vestidos</option>
+                <option value="makeup">Maquillaje</option>
+            </select>
+    
+            <button id="products-menu-btn">Filtrar</button>
+        </div>
+
+        <div class="products" id="products">
+
+        </div>
+
     </div>
 
     <!-- side nav -->
@@ -58,6 +82,8 @@
 
     <!--Scripts-->
     <script src="/js/side-nav.js"></script>
+    <script src="/js/data-base.js"></script>
+    <script src="/js/render-catalogue.js"></script>
 
 </body>
 </html>
