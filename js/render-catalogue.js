@@ -1,25 +1,22 @@
 let productsContainer = document.getElementById("products");
 let productsDropdownMenu = document.getElementById("products-dropdown-menu");
 let productsMenuBtn = document.getElementById("products-menu-btn");
-let dropdownMenuOption = "0";
+let dropdownMenuOption = "all";
 
-function renderCatalogue (products){
-    let productToFilter;
-    productsContainer.innerHTML="";
-    dropdownMenuOption = productsDropdownMenu.value;
-    if(dropdownMenuOption=="all"){
-        productToFilter=products;
-    }
-    else{
-        productToFilter=products.filter(
-            function(product){
-                return product.type==dropdownMenuOption;
-            }
-        );
-    }
-    let htmlToRender="";
-    for(let product of productToFilter){
-        htmlToRender+=`
+function renderCatalogue() {
+  productsContainer.innerHTML = "";
+  dropdownMenuOption = productsDropdownMenu.value;
+  let productToFilter;
+  if (dropdownMenuOption == "all") {
+    productToFilter = productsDataBase;
+  } else {
+    productToFilter = productsDataBase.filter(function (product) {
+      return product.type == dropdownMenuOption;
+    });
+  }
+
+  for (product of productToFilter) {
+    productsContainer.innerHTML += `
         <div class="product">
             <img class="product__img" src="${product.imgSrc}">
             <div class="product-info-box">
@@ -28,24 +25,29 @@ function renderCatalogue (products){
                 <p class="product__units">Disponibles: ${product.units}</p>
             </div>
             <div class="product-btns-box">
-                <button class="product__add-cart-btn" title="Agregar al carrito">
+                <button class="product__add-cart-btn" product-id="${product.id}">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </button>
-                <button class="product__show-info-btn" title="Información del producto">
+                <button class="product__show-info-btn" product-id="${product.id}">
                     <i class="fa-solid fa-info"></i>
                 </button>
             </div>
         </div>
         `;
-    }
-    productsContainer.innerHTML=htmlToRender;
+  }
+
+  /*Shopping Cart Listeners*/
+  let productAddCardBtns = document.querySelectorAll(".product__add-cart-btn");
+  productAddCardBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      let productId = btn.getAttribute("product-id");
+      addToShoppingCart(productId);
+    });
+  });
 }
 
-renderCatalogue(productsDataBase)
+renderCatalogue();
 
-productsMenuBtn.addEventListener("click",
-    function(){
-        renderCatalogue(productsDataBase);
-    }
-);
-
+productsMenuBtn.addEventListener("click", function () {
+  renderCatalogue();
+});
