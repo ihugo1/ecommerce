@@ -28,13 +28,13 @@
     display: flex;
     justify-content: space-around;
 }
-.nav-bar-middle li{
+.nav-bar-middle__link{
     font-size: 1.1rem;
     color: var(--white);
     transition: transform 0.4s ease;
 }
-.nav-bar-middle li:hover{
-    transform: scale(1.2);
+.nav-bar-middle__link:hover{
+    transform: scale(1.1);
     color: var(--pink);
     cursor: pointer;
 }

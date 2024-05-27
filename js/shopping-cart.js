@@ -1,7 +1,10 @@
 let shoppingCartList = document.getElementById("shopping-cart-list");
 let shoppingCartTotalDiv = document.getElementById("shopping-cart-total");
+let shoppingCartDiv = document.getElementById("shopping-cart");
 let shoppingCartTotal=0;
 let shoppingCartProductsIdCounter=0;
+let shoppingCartCloseBtn = document.getElementById("shopping-cart__close-btn");
+let shoppingCartOpenBtn = document.getElementById("nav-bar-right__cart-btn");
 
 function removeFromShoppingCart(productShoppingCartId, productPrice){
     let productToRemove = document.getElementById(`${productShoppingCartId}`);
@@ -22,11 +25,11 @@ function addToShoppingCart(productId){
     shoppingCartList.innerHTML+=`
     <div class="shopping-cart__product" id="cart-product-${shoppingCartProductsIdCounter}">
         <p class="shopping-cart__product-id">Id: ${productToAdd.id}</p>
-        <p class="shopping-cart__product-name">Nombre:  ${productToAdd.name}</p>
-        <p class="shopping-cart__product-price">Precio:  ${productToAdd.price}</p>
+        <p class="shopping-cart__product-name">${productToAdd.name}</p>
+        <p class="shopping-cart__product-price">${productToAdd.price}</p>
         <button class="shopping-cart__remove-btn" cart-id="cart-product-${shoppingCartProductsIdCounter}"
         product-price="${productToAdd.price}">
-            Eliminar
+        <i class="fa-solid fa-xmark"></i>
         </button>
     </div>
     `;
@@ -43,3 +46,18 @@ function addToShoppingCart(productId){
     });
   });
 }
+
+function toggleShoppingCart(){
+    shoppingCartDiv.classList.toggle("shopping-cart-active");
+}
+
+shoppingCartOpenBtn.addEventListener("click",
+    function(){
+        toggleShoppingCart();
+    }
+);
+shoppingCartCloseBtn.addEventListener("click",
+    function(){
+        toggleShoppingCart();
+    }
+);

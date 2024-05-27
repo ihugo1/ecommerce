@@ -20,14 +20,20 @@
 
         <div class="nav-bar-middle">
             <ul>
-                <li>Inicio</li>
-                <li>Sucursales</li>
-                <li>Sobre Nosotros</li>
+                <li>
+                    <a class="nav-bar-middle__link" href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a class="nav-bar-middle__link" href="locals.html">Sucursales</a>
+                </li>
+                <li>
+                    <a class="nav-bar-middle__link" href="about-us.html">Sobre Nosotros</a>
+                </li>
             </ul>
         </div>
 
         <div class="nav-bar-right">
-            <button class="nav-bar-right__cart-btn">
+            <button class="nav-bar-right__cart-btn" id="nav-bar-right__cart-btn">
                 <i class="fa-solid fa-cart-shopping"></i>
             </button> 
             <button class="nav-bar-right__side-nav-btn" id="nav-bar-right__side-nav-btn">
@@ -73,10 +79,11 @@
 
     <!--Shopping Cart-->
     <div class="shopping-cart" id="shopping-cart">
-        <p>Mi carrito: </p>
+        <p class="shopping-cart__title">Mi carrito</p>
         <div class="shopping-cart-list" id="shopping-cart-list">
         </div>
-        <p class="shopping-cart-total" id="shopping-cart-total"></p>
+        <p class="shopping-cart-total" id="shopping-cart-total">Total: 0</p>
+        <button class="shopping-cart__close-btn" id="shopping-cart__close-btn">Cerrar Carrito</button>
     </div>
 
     <!-- side nav -->
