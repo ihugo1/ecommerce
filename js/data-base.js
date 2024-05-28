@@ -1,4 +1,5 @@
-productsDataBase = [
+// /js/productDatabase.js
+export const productsDataBase = [
     {
         id: 1, 
         type: "shirt", 
@@ -6,7 +7,6 @@ productsDataBase = [
         price: 15.99, 
         units: 20, 
         imgSrc: "/img/catalogue/camisa.png",
-        description: "bal bla kasdk afhlsafak ñfaskfafk lkfsa flak ñfkasflka ñsakflf "
     },
     {
         id: 2, 

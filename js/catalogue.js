@@ -1,21 +1,24 @@
-/*let productsContainer = document.getElementById("products");
+import { productsDataBase } from "./data-base.js";
+import { addToShoppingCart } from './shopping-cart.js';
+import { createProductModal } from "./product-modals.js";
+
+let productsContainer = document.getElementById("products");
 let productsDropdownMenu = document.getElementById("products-dropdown-menu");
 let productsMenuBtn = document.getElementById("products-menu-btn");
-let dropdownMenuOption = "all";
+let dropMenuOption = "all";
 
-function renderCatalogue() {
+export function renderCatalogue() {
   productsContainer.innerHTML = "";
-  dropdownMenuOption = productsDropdownMenu.value;
-  let productToFilter;
-  if (dropdownMenuOption == "all") {
-    productToFilter = productsDataBase;
+  dropMenuOption = productsDropdownMenu.value;
+  let productsToFilter;
+  if (dropMenuOption == "all") {
+    productsToFilter = productsDataBase;
   } else {
-    productToFilter = productsDataBase.filter(function (product) {
-      return product.type == dropdownMenuOption;
+    productsToFilter = productsDataBase.filter(function (product) {
+      return product.type == dropMenuOption;
     });
   }
-
-  for (product of productToFilter) {
+  for (let product of productsToFilter) {
     productsContainer.innerHTML += `
         <div class="product">
             <img class="product__img" src="${product.imgSrc}">
@@ -33,21 +36,21 @@ function renderCatalogue() {
                 </button>
             </div>
         </div>
-        `;
+    `;
   }
-
-  /*Shopping Cart Listeners*/
-  let productAddCardBtns = document.querySelectorAll(".product__add-cart-btn");
-  productAddCardBtns.forEach(function (btn) {
+  document.querySelectorAll(".product__add-cart-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      let productId = btn.getAttribute("product-id");
-      addToShoppingCart(productId);
+      addToShoppingCart(btn.getAttribute("product-id"));
     });
   });
+  document.querySelectorAll(".product__show-info-btn").forEach(function (btn){
+    btn.addEventListener("click", function(){
+      createProductModal(btn.getAttribute("product-id"));
+    });
+  });
+
 }
 
-renderCatalogue();
-
-productsMenuBtn.addEventListener("click", function () {
+productsMenuBtn.addEventListener("click", function (){
   renderCatalogue();
 });

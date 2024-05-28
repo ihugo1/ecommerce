@@ -1,26 +1,22 @@
+import { productsDataBase } from "./data-base.js";
+
 let shoppingCartList = document.getElementById("shopping-cart-list");
 let shoppingCartTotalDiv = document.getElementById("shopping-cart-total");
 let shoppingCartDiv = document.getElementById("shopping-cart");
-let shoppingCartTotal=0;
-let shoppingCartProductsIdCounter=0;
 let shoppingCartCloseBtn = document.getElementById("shopping-cart__close-btn");
 let shoppingCartOpenBtn = document.getElementById("nav-bar-right__cart-btn");
+let shoppingCartTotal=0;
+let shoppingCartProductsIdCounter=0;
 
-function removeFromShoppingCart(productShoppingCartId, productPrice){
-    let productToRemove = document.getElementById(`${productShoppingCartId}`);
-    productToRemove.remove();
-
+export function removeFromShoppingCart(productShoppingCartId, productPrice){
+    document.getElementById(`${productShoppingCartId}`).remove();
     shoppingCartTotal=shoppingCartTotal-productPrice;
     shoppingCartTotalDiv.innerHTML=`Total: ${shoppingCartTotal.toFixed(2)}`;  
 }
 
 
-function addToShoppingCart(productId){
-    let productToAdd = productsDataBase.find(
-        function(product){
-            return product.id == productId;
-        }
-    );
+export function addToShoppingCart(productId){
+    let productToAdd = productsDataBase.find(product =>{ return product.id == productId; });
     shoppingCartProductsIdCounter++;
     shoppingCartList.innerHTML+=`
     <div class="shopping-cart__product" id="cart-product-${shoppingCartProductsIdCounter}">
@@ -33,7 +29,9 @@ function addToShoppingCart(productId){
         </button>
     </div>
     `;
+
     shoppingCartTotal=shoppingCartTotal+productToAdd.price;
+    alert(`Se agrego ${productToAdd.name} al carrito`);
     shoppingCartTotalDiv.innerHTML=`Total: ${shoppingCartTotal.toFixed(2)}`;    
 
     let shoppingCartDeleteBtns = document.querySelectorAll(".shopping-cart__remove-btn");
@@ -41,9 +39,9 @@ function addToShoppingCart(productId){
     btn.addEventListener("click", function () {
       let productId = btn.getAttribute("cart-id");
       let productPrice = btn.getAttribute("product-price");
-      console.log(productId, productPrice);
       removeFromShoppingCart(productId, productPrice);
     });
+
   });
 }
 
@@ -51,13 +49,5 @@ function toggleShoppingCart(){
     shoppingCartDiv.classList.toggle("shopping-cart-active");
 }
 
-shoppingCartOpenBtn.addEventListener("click",
-    function(){
-        toggleShoppingCart();
-    }
-);
-shoppingCartCloseBtn.addEventListener("click",
-    function(){
-        toggleShoppingCart();
-    }
-);
+shoppingCartOpenBtn.addEventListener("click", () => { toggleShoppingCart(); });
+shoppingCartCloseBtn.addEventListener("click", () => { toggleShoppingCart(); });

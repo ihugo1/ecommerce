@@ -47,13 +47,18 @@
 }
 .shopping-cart__product-price{
     width: 25%;
-    color: green;
+    color: var(--green);
 }
 .shopping-cart__remove-btn{
     width: 15%;
     height: 80%;
-    background-color: rgb(201, 0, 0);
+    background-color: var(--pink);
     text-align: center;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+}
+.shopping-cart__remove-btn:hover{
+    transform: scale(1.1);
 }
 .shopping-cart-total{
     font-size: 1.7rem;
@@ -63,8 +68,13 @@
     width: 100px;
     height: 50px;
     margin: 20px 0;
-    background-color: rgb(201, 0, 0);
+    border-radius: 5px;
+    background-color: var(--pink);
     text-align: center;
+    transition: transform 0.3s ease;
+}
+.shopping-cart__close-btn:hover{
+    transform: scale(1.1);
 }
 /*************************************************************************************************************************/
 /*Responsive*/

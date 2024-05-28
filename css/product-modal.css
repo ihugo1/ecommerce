@@ -1,0 +1,85 @@
+.product-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    padding: 4%;
+    height: 90%;
+    width: 90%;
+    border-radius: 10px;
+    z-index: 100;
+    transition: opacity 0.3s ease;
+}
+.product-modal-active{
+    opacity: 100;
+    pointer-events: all;
+}
+.modal-content{
+    display: flex;
+    gap: 5%;
+    height: 100%;
+}
+.modal__img{
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.modal-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.modal__title{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    margin-bottom: 30px;
+}
+.modal__price{
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+.green-text{
+    color: var(--green);
+}
+.modal__units{
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+.modal__close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px 10px;
+}
+.modal__close-btn i{
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+.modal__close-btn:hover{
+    transform: scale(1.1);
+    color: var(--pink);
+}
+.modal__buy-btn{
+    background-color: var(--pink);
+    width: 50%;
+    margin: 0 auto;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+.modal__buy-btn i{
+    font-size: 1.5rem;
+}
+.modal__buy-btn:hover{
+    transform: scale(1.1);
+}
