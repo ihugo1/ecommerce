@@ -24,7 +24,6 @@
     align-items: center;
     
     background-color: rgba(0, 0, 0, 0.7);
-    color: var(--white);
     z-index: 5;
 }
 .header-catalogue-content p{
@@ -32,6 +31,7 @@
     font-weight: 700;
     padding: 0 5%;
     text-align: center;
+    color: var(--white);
 }
 /*************************************************************************************************************************/
 .catalogue-content{
@@ -45,6 +45,25 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+
+    font-size: 1.2rem;
+}
+.filter-bar label{
+    font-size: 1.2rem;
+}
+.products-dropdown-menu{
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    height: 30px;
+    width:  100px;
+}
+.products-menu-btn{
+    background-color: var(--pink);
+    height: 30px;
+    width:  80px;
+    border-radius: 5px;
+    color: var(--white);
 }
 .products{
     width: 100%;

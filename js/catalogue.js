@@ -28,10 +28,10 @@ export function renderCatalogue() {
                 <p class="product__units">Disponibles: ${product.units}</p>
             </div>
             <div class="product-btns-box">
-                <button class="product__add-cart-btn" product-id="${product.id}">
+                <button class="product__add-cart-btn animated-btn" product-id="${product.id}">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </button>
-                <button class="product__show-info-btn" product-id="${product.id}">
+                <button class="product__show-info-btn animated-btn" product-id="${product.id}">
                     <i class="fa-solid fa-info"></i>
                 </button>
             </div>

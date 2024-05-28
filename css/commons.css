@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Mulish';
+    color: var(--black);
 }
 ul{
     list-style: none;
@@ -34,10 +35,18 @@ a{
     font-family: 'Philosopher';
     font-size: 1.5rem;
     line-height: -0.8;
+    color: var(--white);
 }
 .store-logo{
     font-family: 'Fasthand';
     font-size: 1.5rem;
     line-height: 0.8;
-    color: rgb(220, 50, 80);
+    color: var(--pink);
+}
+
+.animated-btn{
+    transition: transform 0.3s ease;
+}
+.animated-btn:hover{
+    transform: scale(1.1);
 }

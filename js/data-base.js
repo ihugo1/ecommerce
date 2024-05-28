@@ -25,19 +25,19 @@ export const productsDataBase = [
         imgSrc: "/img/catalogue/gorro.png"
     },
     {
-        id: 4, 
+        id: 3, 
         type: "dress", 
         name: "Vestido Jiu", 
         price: 70.99, 
-        units: 5, 
+        units: 10, 
         imgSrc: "/img/catalogue/vestido.png"
     },
     {
-        id: 5, 
+        id: 4, 
         type: "accesory", 
         name: "Collar Dami", 
         price: 10.99, 
-        units: 23, 
+        units: 10, 
         imgSrc: "/img/catalogue/collar.png"
     },
     {
@@ -53,7 +53,7 @@ export const productsDataBase = [
         type: "makeup", 
         name: "Maquillaje Sua", 
         price: 16.99, 
-        units: 24, 
+        units: 3, 
         imgSrc: "/img/catalogue/maquillaje.png"
     },
 ];

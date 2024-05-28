@@ -16,8 +16,8 @@ export function createProductModal (productId){
             <h3 class="modal__title">${productToShow.name}</h3>
             <p class="modal__price">Precio: <span class="green-text">$${productToShow.price}</span></p>
             <p class="modal__units">Unidadades Disponibles: <span class="green-text">${productToShow.units}</span></p>
-            <button class="modal__buy-btn"><i class="fa-solid fa-cart-shopping"></i>Agregar al carrito</button>
-            <button class="modal__close-btn"> <i class="fa-solid fa-xmark"></i> </button>
+            <button class="modal__buy-btn animated-btn"><i class="fa-solid fa-cart-shopping"></i>Agregar al carrito</button>
+            <button class="modal__close-btn animated-btn"> <i class="fa-solid fa-xmark"></i> </button>
         </div>
     </div>
     `;

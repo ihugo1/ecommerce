@@ -23,7 +23,7 @@ export function addToShoppingCart(productId){
         <p class="shopping-cart__product-id">Id: ${productToAdd.id}</p>
         <p class="shopping-cart__product-name">${productToAdd.name}</p>
         <p class="shopping-cart__product-price">${productToAdd.price}</p>
-        <button class="shopping-cart__remove-btn" cart-id="cart-product-${shoppingCartProductsIdCounter}"
+        <button class="shopping-cart__remove-btn animated-btn" cart-id="cart-product-${shoppingCartProductsIdCounter}"
         product-price="${productToAdd.price}">
         <i class="fa-solid fa-xmark"></i>
         </button>
