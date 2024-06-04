@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fashion Store | Catalogue X</title>
+    <title>Fashion Store | Sucursales X</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
@@ -23,7 +23,7 @@
       <div class="nav-bar-middle">
         <ul>
           <li><a class="nav-bar-middle__link" href="index.html">Inicio</a></li>
-          <li><a class="nav-bar-middle__link" href="locals.html">Sucursales</a></li>
+          <li><a class="nav-bar-middle__link" href="catalogue.html">Catálogo</a></li>
           <li><a class="nav-bar-middle__link" href="about-us.html">Sobre Nosotros</a></li>
         </ul>
       </div>
@@ -40,46 +40,31 @@
     </nav>
 
 
-    <!-- header -->
-    <div class="header-catalogue">
-      <img
-        class="header-catalogue-background"
-        src="/img/banners/banner-catalogue.webp"
-      />
-      <div class="header-catalogue-content">
-        <p>Cátalogo.</p>
-      </div>
-    </div>
-
     <!----------------------------------------------------------------------------------------->
 
-    <!-- Catalogue -->
-    <div class="catalogue-content">
-      <div class="filter-bar">
-        <label for="product-dropdown-menu">Filtrar por:</label>
-
-        <select
-          id="products-dropdown-menu"
-          class="products-dropdown-menu"
-          name="product-dropdown-menu"
-        >
-          <option value="all">Todos</option>
-          <option value="shirt">Camisas</option>
-          <option value="accesory">Accesorios</option>
-          <option value="pant">Pantalones</option>
-          <option value="hat">Gorros</option>
-          <option value="jacket">Chaquetas</option>
-          <option value="dress">Vestidos</option>
-          <option value="makeup">Maquillaje</option>
-        </select>
-
-        <button id="products-menu-btn" class="products-menu-btn animated-btn">
-          Filtrar
-        </button>
+    <section class="locals">
+      <div class="local">
+        <iframe class="local__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.6440571272974!2d-89.25132042548115!3d13.679394686704983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f632e2afad31d7d%3A0x40f719aa05749a78!2sMultiplaza!5e0!3m2!1ses-419!2ssv!4v1717093071061!5m2!1ses-419!2ssv" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="local-info">
+          <h3 class="local__name">Local #1</h3>
+          <p class="local__address">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque blanditiis neque consequuntur cum saepe numquam ab sapiente praesentium ratione ad repellat, officia veritatis, fuga fugit non, nobis dolor excepturi minima.</p>
+        </div>
       </div>
-
-      <div class="products" id="products"></div>
-    </div>
+      <div class="local">
+        <iframe class="local__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.6440571272974!2d-89.25132042548115!3d13.679394686704983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f632e2afad31d7d%3A0x40f719aa05749a78!2sMultiplaza!5e0!3m2!1ses-419!2ssv!4v1717093071061!5m2!1ses-419!2ssv" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="local-info">
+          <h3 class="local__name">Local #2</h3>
+          <p class="local__address">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque blanditiis neque consequuntur cum saepe numquam ab sapiente praesentium ratione ad repellat, officia veritatis, fuga fugit non, nobis dolor excepturi minima.</p>
+        </div>
+      </div>
+      <div class="local">
+        <iframe class="local__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.6440571272974!2d-89.25132042548115!3d13.679394686704983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f632e2afad31d7d%3A0x40f719aa05749a78!2sMultiplaza!5e0!3m2!1ses-419!2ssv!4v1717093071061!5m2!1ses-419!2ssv" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="local-info">
+          <h3 class="local__name">Local #3</h3>
+          <p class="local__address">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque blanditiis neque consequuntur cum saepe numquam ab sapiente praesentium ratione ad repellat, officia veritatis, fuga fugit non, nobis dolor excepturi minima.</p>
+        </div>
+      </div>
+    </section>
 
     <!--Footer-->
     <footer class="footer">
@@ -124,7 +109,7 @@
           <a href="index.html" class="side-nav__link">Inicio</a>
         </li>
         <li>
-          <a href="locals.html" class="side-nav__link">Sucursales</a>
+          <a href="catalogue.html" class="side-nav__link">Catálogo</a>
         </li>
         <li>
           <a href="about-us.html" class="side-nav__link">Sobre Nosotros</a>
@@ -136,6 +121,6 @@
     <!----------------------------------------------------------------------------------------->
 
     <!--Scripts-->
-    <script type="module" src="/js/catalogue-scripts.js"></script>
+    <script type="module" src="/js/scripts-main.js"></script>
   </body>
 </html>

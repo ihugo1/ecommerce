@@ -13,7 +13,7 @@ export const productsDataBase = [
         type: "pant", 
         name: "Pantalones Siyeon", 
         price: 25.99, 
-        units: 14, 
+        units: 6, 
         imgSrc: "/img/catalogue/pantalones.png"
     },
     {
@@ -25,15 +25,15 @@ export const productsDataBase = [
         imgSrc: "/img/catalogue/gorro.png"
     },
     {
-        id: 3, 
+        id: 4, 
         type: "dress", 
         name: "Vestido Jiu", 
         price: 70.99, 
-        units: 10, 
+        units: 5, 
         imgSrc: "/img/catalogue/vestido.png"
     },
     {
-        id: 4, 
+        id: 5, 
         type: "accesory", 
         name: "Collar Dami", 
         price: 10.99, 
@@ -45,7 +45,7 @@ export const productsDataBase = [
         type: "jacket", 
         name: "Chaqueta Handong", 
         price: 40.99, 
-        units: 13, 
+        units: 1, 
         imgSrc: "/img/catalogue/chaqueta.png"
     },
     {
@@ -53,7 +53,7 @@ export const productsDataBase = [
         type: "makeup", 
         name: "Maquillaje Sua", 
         price: 16.99, 
-        units: 3, 
+        units: 33, 
         imgSrc: "/img/catalogue/maquillaje.png"
     },
 ];

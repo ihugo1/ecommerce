@@ -1,18 +1,20 @@
 .side-nav{
     height: 100%;
-    width: 70%;
-    left: -70%;
+    width: 60%;
+    right: -60%;
 
     position: fixed;
     top: 0;
     z-index: 15;
 
-    background-color: rgb(30, 30, 30);
+    background-color: var(--dark-black);
 
-    transition: left 0.3s ease;
+    transition: right 0.3s ease;
+
+    text-align: center;
 }
 .side-nav-active{
-    left: 0;
+    right: 0;
 }
 .side-nav ul{
     height: 100%;
@@ -21,10 +23,11 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-
 }
-
-.side-nav li{
+.side-nav a{
     color: var(--white);
     font-size: 1.4rem;
+}
+.side-nav__btn-close{
+    height: 40px;
 }

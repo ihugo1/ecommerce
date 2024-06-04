@@ -1,7 +1,8 @@
+/***************************Header********************************/
 .header-main{
-    margin-top: 9.9vh;
+    margin-top: 10vh;
 
-    height: 50vh;
+    height: 90vh;
 
     position: relative;
 }
@@ -32,6 +33,7 @@
     font-weight: 700;
     padding: 0 5%;
     text-align: center;
+    color: var(--white);
 }
 .header-main-content button{
     height: 40px;
@@ -49,4 +51,134 @@
 .header-main-content button:hover{
     font-size: 1.1rem;
 }
-/*************************************************************************************************************************/
+
+/***************************FeaturedSection********************************/
+
+.featured-products{
+    background-color: var(--white);
+    padding: 5%;
+    height: 90vh;
+    width: 100%;
+}
+.featured-products-title{
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+.featured-products-container{
+    width: 100%;
+    height: 100%;
+    padding: 2% 10%;
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px ;
+
+    background-color: var(--white);
+}
+/***************************suscription********************************/
+
+.suscription{
+    display: flex;
+    height: 90vh;
+}
+.suscription-img-container{
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(44, 0, 27, 0.7);
+    padding: 0 5%;
+}
+.suscription-img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    z-index: -1;
+}
+.suscription-img-container p{
+   color: var(--white);
+   padding: auto;
+   font-size: 2rem;
+   font-weight: 700;
+   text-align: center;
+}
+.register-form-container{
+    width: 50%;
+    background-color: var(--black);
+    padding: 5%;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register-form{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 80%;
+    gap: 20px;
+}
+.register-form label{
+    color: var(--white);
+}
+.register-form input{
+    width: 100%;
+    height: 30px;
+}
+.register-form input:active{
+    border: none;
+}
+.register-form__btn{
+    margin: 40px 0;
+    height: 40px;
+    width: 25%;
+    
+    background-color: var(--pink);
+}
+
+/***************************footer********************************/
+
+.footer{
+    height: 40vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: var(--pink);
+}
+.footer p{
+    color: var(--white);
+}
+
+/***************************Resposive********************************/
+
+@media (max-width: 768px) {
+    .featured-products{
+        height: auto;
+    }
+    .featured-products-container{
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+    }
+    .suscription{
+        flex-direction: column;
+    }
+    .suscription-img-container{
+        width: 100%;
+        height: 40vh;
+    }
+    .register-form-container{
+        width: 100%;
+        height: 50vh;
+    }
+    .footer{
+        flex-direction: column;
+    }
+}

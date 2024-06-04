@@ -14,7 +14,6 @@ button{
 }
 a{
     text-decoration: none;
-    color: none;
 }
 
 /*************************************************************************************************************************/
@@ -22,7 +21,9 @@ a{
 :root {
     --white :rgb(220, 220, 220);
     --black :rgb(30, 30, 30);
+    --dark-black :rgb(20, 20, 20);
     --pink: rgb(220, 50, 80);
+    --dark-pink: rgb(179, 42, 67);
     --green: rgb(17, 150, 0);
 }
 
@@ -46,7 +47,10 @@ a{
 
 .animated-btn{
     transition: transform 0.3s ease;
+    border-radius: 5px;
+    background-color: var(--pink);
 }
 .animated-btn:hover{
     transform: scale(1.1);
+    background-color: var(--dark-pink);
 }

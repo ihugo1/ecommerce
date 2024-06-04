@@ -1,0 +1,45 @@
+.locals{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+.local{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    background-color: var(--black);
+    padding: 2%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+}
+.local__map{
+    width: 40%;
+    height: 300px;
+    border-radius: 5px;
+}
+.local-info{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+.local__name{
+    color: var(--white);
+    font-size: 2rem;
+    margin: 10px 0;
+}
+.local__address{
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+/***************************Resposive********************************/
+
+@media (max-width: 768px) {
+    .local-info, .local__map{
+        width: 100%;
+    }
+    .local{
+        flex-direction: column;
+    }
+}

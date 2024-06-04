@@ -9,7 +9,7 @@
 
     overflow-y:scroll;
 
-    background-color: var(--black);
+    background-color: var(--dark-black);
     z-index: 100;
 
     transition: right 0.3s ease;
@@ -20,6 +20,7 @@
 .shopping-cart__title{
     font-size: 2rem;
     color: var(--white);
+    border-bottom: 1px solid var(--white);
 }
 .shopping-cart-list{
     display: flex;
@@ -59,7 +60,7 @@
     border-radius: 5px;
 }
 .shopping-cart-total{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: var(--white);
 }
 .shopping-cart__close-btn{
@@ -74,8 +75,8 @@
 /*Responsive*/
 @media (max-width: 768px) {
     .shopping-cart{
-        width: 80%;
-        right: -80%;
+        width: 100%;
+        right: -100%;
     }
     .shopping-cart-active{
         right: 0;

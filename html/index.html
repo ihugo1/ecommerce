@@ -1,86 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fashion Store</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
 
-    <!-- nav bar -->
+    <!----------------------------------------------------------------------------------------->
+
+    <!-- NavBar -->
     <nav class="nav-bar">
 
-        <div class="nav-bar-left">
-            <div class="fashion-store-logo">
-                <p class="fashion-logo">Fashion</p>
-                <p class="store-logo">STORE</p>
-            </div>
+      <div class="nav-bar-left">
+        <div class="fashion-store-logo">
+          <p class="fashion-logo">Fashion</p>
+          <p class="store-logo">STORE</p>
         </div>
+      </div>
 
-        <div class="nav-bar-middle">
-            <ul>
-                <li>
-                    <a class="nav-bar-middle__link" href="catalogue.html">Catálogo</a>
-                </li>
-                <li>
-                    <a class="nav-bar-middle__link" href="locals.html">Sucursales</a>
-                </li>
-                <li>
-                    <a class="nav-bar-middle__link" href="about-us.html">Sobre Nosotros</a>
-                </li>
-            </ul>
-        </div>
+      <div class="nav-bar-middle">
+        <ul>
+          <li><a class="nav-bar-middle__link" href="catalogue.html">Catálogo</a></li>
+          <li><a class="nav-bar-middle__link" href="locals.html">Sucursales</a></li>
+          <li><a class="nav-bar-middle__link" href="about-us.html">Sobre Nosotros</a></li>
+        </ul>
+      </div>
 
-        <div class="nav-bar-right">
-            <button class="nav-bar-right__cart-btn" id="nav-bar-right__cart-btn">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </button> 
-            <button class="nav-bar-right__side-nav-btn" id="nav-bar-right__side-nav-btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
+      <div class="nav-bar-right">
+        <button class="nav-bar__open-cart-btn" id="nav-bar__open-cart-btn">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+        <button class="nav-bar__open-menu-btn" id="nav-bar__open-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
 
     </nav>
 
     <!-- header -->
     <div class="header-main">
-        <img class="header-main-background" src="/img/banners/banner-main.jpg">
-        <div class="header-main-content">
-            <p>Ponte a la moda con nuestra última línea de ropa.</p>
-            <button>¡Compra ahora!</button>
-        </div>
+      <img class="header-main-background" src="/img/banners/banner-main.jpg" />
+      <div class="header-main-content">
+        <p>Ponte a la moda con nuestra última línea de ropa.</p>
+        <button>¡Compra ahora!</button>
+      </div>
     </div>
 
-    <!--Main content-->
-    <div class="main-content">
-        <h2>Productos destacados</h2>
-        <div class="featured-products-container">
-            
-        </div>
-    </div>
+    <!----------------------------------------------------------------------------------------->
+
+    <!--Featured-->
+    <section class="featured-products">
+      <h2 class="featured-products-title">Productos destacados</h2>
+      <div class="featured-products-container"></div>
+    </section>
+
+    <!--Inscription-->
+    <section class="suscription">
+      <div class="suscription-img-container">
+        <img src="/img/main/suscription.jpg" alt="" />
+        <p>Suscríbete para estar al tanto de todo lo nuevo.</p>
+      </div>
+      <div class="register-form-container">
+        <form action="" class="register-form">
+          <label for="register-form__name">Nombre de Usuario: </label>
+          <input type="text" name="register-form__name" />
+          <label for="register-form__email">Correo electrónico:</label>
+          <input type="text" name="register-form__email"">
+        </form>
+        <button class="register-form__btn animated-btn">Registrarse</button>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+      <div class="footer-left">
+        <p class="footer__contact">2033-1356</p>
+        <p class="footer__contact">2535-3556</p>
+        <p class="footer__contact">7776-3451</p>
+      </div>
+      <div class="footer-middle">
+        <p class="footer__social-media">Instagram: @fashionclubsv</p>
+        <p class="footer__social-media">Facebook: @fashionclubsvfb</p>
+        <p class="footer__social-media">Youtube: @fashionclubsvtv</p>
+      </div>
+      <div class="footer-right">
+        <p class="footer__adress">Dirección 1</p>
+        <p class="footer__adress">Dirección 2</p>
+      </div>
+    </footer>
+
+    <!----------------------------------------------------------------------------------------->
+
+    <!--Modal-->
+    <div class="product-modal"></div>
 
     <!--Shopping Cart-->
     <div class="shopping-cart" id="shopping-cart">
-        <p class="shopping-cart__title">Mi carrito</p>
-        <div class="shopping-cart-list" id="shopping-cart-list">
-        </div>
-        <p class="shopping-cart-total" id="shopping-cart-total">Total: 0</p>
-        <button class="shopping-cart__close-btn animated-btn" id="shopping-cart__close-btn">Cerrar Carrito</button>
+      <p class="shopping-cart__title">Mi carrito</p>
+      <div class="shopping-cart-list" id="shopping-cart-list"></div>
+      <p class="shopping-cart-total" id="shopping-cart-total"></p>
+      <button
+        class="shopping-cart__close-btn animated-btn"
+        id="shopping-cart__close-btn"
+      >
+        Cerrar Carrito
+      </button>
     </div>
 
     <!-- side nav -->
     <div class="side-nav" id="side-nav">
-        <ul>
-            <li>Inicio</li>
-            <li>Catálogo</li>
-            <li>Sucursales</li>
-            <li>Sobre Nosotros</li>
-        </ul>
+      <ul>
+        <li>
+          <a href="catalogue.html" class="side-nav__link">Catálogo</a>
+        </li>
+        <li>
+          <a href="locals.html" class="side-nav__link">Sucursales</a>
+        </li>
+        <li>
+          <a href="about-us.html" class="side-nav__link">Sobre Nosotros</a>
+        </li>
+        <button class="side-nav__btn-close animated-btn" id="side-nav__btn-close">Cerrar</button>
+      </ul>
     </div>
 
-    <!--Scripts-->
-    <script type="module" src="/js/scripts-main.js"></script>    
+    <!----------------------------------------------------------------------------------------->
 
-</body>
+    <!--Scripts-->
+    <script type="module" src="/js/scripts-main.js"></script>
+  </body>
 </html>

@@ -36,6 +36,16 @@
 
     border-radius: 0 0 10px 10px;
 }
+.product__name{
+    font-size: 1.3rem;
+}
+.product__price{
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+.product__units{
+    font-size: 1rem;
+}
 .product__add-cart-btn,.product__show-info-btn{
     height: 70%;
     width: 40%;

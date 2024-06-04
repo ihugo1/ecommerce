@@ -4,50 +4,92 @@ let shoppingCartList = document.getElementById("shopping-cart-list");
 let shoppingCartTotalDiv = document.getElementById("shopping-cart-total");
 let shoppingCartDiv = document.getElementById("shopping-cart");
 let shoppingCartCloseBtn = document.getElementById("shopping-cart__close-btn");
-let shoppingCartOpenBtn = document.getElementById("nav-bar-right__cart-btn");
-let shoppingCartTotal=0;
-let shoppingCartProductsIdCounter=0;
+let shoppingCartOpenBtn = document.getElementById("nav-bar__open-cart-btn");
 
-export function removeFromShoppingCart(productShoppingCartId, productPrice){
-    document.getElementById(`${productShoppingCartId}`).remove();
-    shoppingCartTotal=shoppingCartTotal-productPrice;
-    shoppingCartTotalDiv.innerHTML=`Total: ${shoppingCartTotal.toFixed(2)}`;  
-}
+let shoppingCartProductsIdCounter;
+let shoppingCart = [];
+let shoppingCartTotal;
 
+/************************************************************************************************************************/
 
-export function addToShoppingCart(productId){
-    let productToAdd = productsDataBase.find(product =>{ return product.id == productId; });
-    shoppingCartProductsIdCounter++;
-    shoppingCartList.innerHTML+=`
-    <div class="shopping-cart__product" id="cart-product-${shoppingCartProductsIdCounter}">
-        <p class="shopping-cart__product-id">Id: ${productToAdd.id}</p>
-        <p class="shopping-cart__product-name">${productToAdd.name}</p>
-        <p class="shopping-cart__product-price">${productToAdd.price}</p>
-        <button class="shopping-cart__remove-btn animated-btn" cart-id="cart-product-${shoppingCartProductsIdCounter}"
-        product-price="${productToAdd.price}">
-        <i class="fa-solid fa-xmark"></i>
-        </button>
-    </div>
+function updateShoppingCart() {
+  shoppingCartProductsIdCounter = 0;
+  shoppingCartTotal=0;
+  shoppingCartList.innerHTML = "";
+
+  for (let product of shoppingCart) {
+    product.cartId = shoppingCartProductsIdCounter;
+    shoppingCartList.innerHTML += `
+      <div class="shopping-cart__product">
+        <p class="shopping-cart__product-id">Id: ${product.id}</p>
+        <p class="shopping-cart__product-name">${product.name}</p>
+        <p class="shopping-cart__product-price">$ ${product.price}</p>
+        <button class="shopping-cart__remove-btn animated-btn" productCartId="${product.cartId}"> 
+          <i class="fa-solid fa-xmark"></i> 
+        </button> 
+      </div>
     `;
+    shoppingCartTotal=shoppingCartTotal+product.price;
+    shoppingCartProductsIdCounter++;
+  }
 
-    shoppingCartTotal=shoppingCartTotal+productToAdd.price;
-    alert(`Se agrego ${productToAdd.name} al carrito`);
-    shoppingCartTotalDiv.innerHTML=`Total: ${shoppingCartTotal.toFixed(2)}`;    
+  shoppingCartTotalDiv.innerHTML=`Total: ${shoppingCartTotal.toFixed(2)}`;
 
-    let shoppingCartDeleteBtns = document.querySelectorAll(".shopping-cart__remove-btn");
-    shoppingCartDeleteBtns.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      let productId = btn.getAttribute("cart-id");
-      let productPrice = btn.getAttribute("product-price");
-      removeFromShoppingCart(productId, productPrice);
-    });
+  let shoppingCartDeleteBtns = document.querySelectorAll(".shopping-cart__remove-btn");
 
-  });
+  shoppingCartDeleteBtns.forEach(
+    (btn) => btn.addEventListener("click", () => removeFromShoppingCart(btn.getAttribute("productCartId")))
+  );
+
+  // Guardar el carrito en localStorage
+  localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+  localStorage.setItem("shoppingCartTotal", shoppingCartTotal.toString());
 }
 
-function toggleShoppingCart(){
-    shoppingCartDiv.classList.toggle("shopping-cart-active");
+/************************************************************************************************************************/
+
+export function addToShoppingCart(productId) {
+  let productToAdd = Object.assign({}, productsDataBase.find((product) => product.id == productId));
+  shoppingCart.push(productToAdd);
+  shoppingCartTotal+=productToAdd.price;
+  updateShoppingCart();
+  alert(`Se agregó ${productToAdd.name} al carrito.`);
 }
 
-shoppingCartOpenBtn.addEventListener("click", () => { toggleShoppingCart(); });
-shoppingCartCloseBtn.addEventListener("click", () => { toggleShoppingCart(); });
+/************************************************************************************************************************/
+
+export function removeFromShoppingCart(productCardId) {
+  shoppingCart = shoppingCart.filter((product) => product.cartId !== parseInt(productCardId));
+  updateShoppingCart();
+}
+
+/****************************************************EVENT-LISTENERS***************************************************/
+
+function toggleShoppingCart() {
+  shoppingCartDiv.classList.toggle("shopping-cart-active");
+}
+
+shoppingCartOpenBtn.addEventListener("click", () => toggleShoppingCart());
+shoppingCartCloseBtn.addEventListener("click", () => toggleShoppingCart());
+
+/************************************************************************************************************************/
+
+export function loadShoppingCart() {
+  const savedCart = localStorage.getItem("shoppingCart");
+  const savedTotal = localStorage.getItem("shoppingCartTotal");
+
+  if (savedCart) {
+    shoppingCart = JSON.parse(savedCart);
+  } else {
+    shoppingCart = [];
+  }
+
+  if (savedTotal) {
+    shoppingCartTotal = parseFloat(savedTotal);
+  } else {
+    shoppingCartTotal = 0;
+  }
+
+  updateShoppingCart();
+}
+

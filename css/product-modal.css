@@ -56,6 +56,8 @@
     top: 0;
     right: 0;
     margin: 8px 10px;
+    height: 30px;
+    width: 30px;
 }
 .modal__close-btn i{
     font-size: 2rem;
@@ -80,3 +82,13 @@
 .modal__buy-btn i{
     font-size: 1.5rem;
 }
+@media (max-width: 768px) {
+    .modal-content{
+        flex-direction: column;
+    }
+    .modal__img{
+        width: 100%;
+    }
+    .modal-info-container{
+        width: 100%;
+    }
