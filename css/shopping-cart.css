@@ -63,13 +63,21 @@
     font-size: 1.5rem;
     color: var(--white);
 }
-.shopping-cart__close-btn{
+.shopping-cart__close-btn, .shopping-cart__clear-btn{
     width: 100px;
     height: 50px;
     margin: 20px 0;
     border-radius: 5px;
     background-color: var(--pink);
     text-align: center;
+    margin: 10px 10px 0 0;
+}
+.shopping-cart__clear-btn{
+    background-color: var(--white);
+    transition: transform 0.3s ease;
+}
+.shopping-cart__clear-btn:hover{
+    transform: scale(1.1);
 }
 /*************************************************************************************************************************/
 /*Responsive*/

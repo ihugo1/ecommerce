@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fashion Store</title>
+    <title>Fashion Store | Comprar</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
@@ -22,8 +22,8 @@
 
       <div class="nav-bar-middle">
         <ul>
+          <li><a class="nav-bar-middle__link" href="index.html">Inicio</a></li>
           <li><a class="nav-bar-middle__link" href="catalogue.html">Catálogo</a></li>
-          <li><a class="nav-bar-middle__link" href="locals.html">Sucursales</a></li>
           <li><a class="nav-bar-middle__link" href="about-us.html">Sobre Nosotros</a></li>
         </ul>
       </div>
@@ -38,40 +38,6 @@
       </div>
 
     </nav>
-
-    <!-- header -->
-    <div class="header-main">
-      <img class="header-main-background" src="/img/banners/banner-main.jpg" />
-      <div class="header-main-content">
-        <p>Ponte a la moda con nuestra última línea de ropa.</p>
-        <button>¡Compra ahora!</button>
-      </div>
-    </div>
-
-    <!----------------------------------------------------------------------------------------->
-
-    <!--Featured-->
-    <section class="featured-products">
-      <h2 class="featured-products-title">Productos destacados</h2>
-      <div class="featured-products-container"></div>
-    </section>
-
-    <!--Inscription-->
-    <section class="suscription">
-      <div class="suscription-img-container">
-        <img src="/img/main/suscription.jpg" alt="" />
-        <p>Suscríbete para estar al tanto de todo lo nuevo.</p>
-      </div>
-      <div class="register-form-container">
-        <form action="" class="register-form">
-          <label for="register-form__name">Nombre de Usuario: </label>
-          <input type="text" name="register-form__name" />
-          <label for="register-form__email">Correo electrónico:</label>
-          <input type="text" name="register-form__email"">
-        </form>
-        <button class="register-form__btn animated-btn">Registrarse</button>
-      </div>
-    </section>
 
     <!--Footer-->
     <footer class="footer">
@@ -93,30 +59,14 @@
 
     <!----------------------------------------------------------------------------------------->
 
-    <!--Modal-->
-    <div class="product-modal"></div>
-
-    <!--Shopping Cart-->
-    <div class="shopping-cart" id="shopping-cart">
-      <p class="shopping-cart__title">Mi carrito</p>
-      <div class="shopping-cart-list" id="shopping-cart-list"></div>
-      <p class="shopping-cart-total" id="shopping-cart-total"></p>
-      <button class="shopping-cart__close-btn animated-btn" id="shopping-cart__close-btn">
-        Cerrar Carrito
-      </button>
-      <button class="shopping-cart__clear-btn" id="shopping-cart__clear-btn">
-        Vaciar Carrito
-      </button>
-    </div>
-
     <!-- side nav -->
     <div class="side-nav" id="side-nav">
       <ul>
         <li>
-          <a href="catalogue.html" class="side-nav__link">Catálogo</a>
+          <a href="index.html" class="side-nav__link">Inicio</a>
         </li>
         <li>
-          <a href="locals.html" class="side-nav__link">Sucursales</a>
+          <a href="catalogue.html" class="side-nav__link">Catálogo</a>
         </li>
         <li>
           <a href="about-us.html" class="side-nav__link">Sobre Nosotros</a>
@@ -127,7 +77,9 @@
 
     <!----------------------------------------------------------------------------------------->
 
+    <section id="buying-list"></section>
+
     <!--Scripts-->
-    <script type="module" src="/js/scripts-main.js"></script>
+    <script src="/js/buy.js"></script>
   </body>
 </html>
