@@ -28,6 +28,8 @@ export function createProductModal(productId) {
 
   document.querySelector(".modal__buy-btn").addEventListener("click", () => addToShoppingCart(productToShow.id));
 
-  document.querySelector(".modal__close-btn").addEventListener("click", () => showProductModal());
-
+  document.querySelector(".modal__close-btn").addEventListener("click", () => {
+      showProductModal();
+      document.body.classList.remove("body-overlay");
+  });
 }

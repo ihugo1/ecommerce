@@ -1,4 +1,7 @@
 import { productsDataBase } from "./data-base.js";
+if (!localStorage.getItem('productsDataBase')) {
+  localStorage.setItem('productsDataBase', JSON.stringify(productsDataBase));
+}
 
 let shoppingCartList = document.getElementById("shopping-cart-list");
 let shoppingCartTotalDiv = document.getElementById("shopping-cart-total");
@@ -16,7 +19,7 @@ let shoppingCartTotal;
 
 function updateShoppingCart() {
   shoppingCartProductsIdCounter = 0;
-  shoppingCartTotal=0;
+  shoppingCartTotal = 0;
   shoppingCartList.innerHTML = "";
 
   for (let product of shoppingCart) {
@@ -31,11 +34,11 @@ function updateShoppingCart() {
         </button> 
       </div>
     `;
-    shoppingCartTotal=shoppingCartTotal+product.price;
+    shoppingCartTotal += product.price;
     shoppingCartProductsIdCounter++;
   }
 
-  shoppingCartTotalDiv.innerHTML=`Total: ${shoppingCartTotal.toFixed(2)}`;
+  shoppingCartTotalDiv.innerHTML = `Total: ${shoppingCartTotal.toFixed(2)}`;
 
   let shoppingCartDeleteBtns = document.querySelectorAll(".shopping-cart__remove-btn");
 
@@ -43,7 +46,6 @@ function updateShoppingCart() {
     (btn) => btn.addEventListener("click", () => removeFromShoppingCart(btn.getAttribute("productCartId")))
   );
 
-  // Guardar el carrito en localStorage
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   localStorage.setItem("shoppingCartTotal", shoppingCartTotal.toString());
 }
@@ -53,7 +55,7 @@ function updateShoppingCart() {
 export function addToShoppingCart(productId) {
   let productToAdd = Object.assign({}, productsDataBase.find((product) => product.id == productId));
   shoppingCart.push(productToAdd);
-  shoppingCartTotal+=productToAdd.price;
+  shoppingCartTotal += productToAdd.price;
   updateShoppingCart();
   alert(`Se agregó ${productToAdd.name} al carrito.`);
 }
@@ -67,24 +69,25 @@ export function removeFromShoppingCart(productCardId) {
 
 /************************************************************************************************************************/
 
-function buyShoppingCart (){
+function buyShoppingCart() {
   let productToBuy;
-  for(let productInCart of shoppingCart){
+  for (let productInCart of shoppingCart) {
     productToBuy = productsDataBase.find((product) => productInCart.id == product.id);
-    if(productToBuy.units>0){
-      productToBuy.units = productToBuy.units - 1;
+    if (productToBuy.units > 0) {
+      productToBuy.units -= 1;
       removeFromShoppingCart(productInCart.cartId);
-    }
-    else{
+    } else {
       alert(`No se pudo comprar debido a unidades agotadas: ${productToBuy.name}`);
     }
   }
+  localStorage.setItem('productsDataBase', JSON.stringify(productsDataBase));
+  updateShoppingCart();
 }
 
 /************************************************************************************************************************/
 
-function clearShoppingCart () {
-  shoppingCart=[];
+function clearShoppingCart() {
+  shoppingCart = [];
   updateShoppingCart();
 }
 
@@ -116,7 +119,23 @@ export function loadShoppingCart() {
   } else {
     shoppingCartTotal = 0;
   }
-
   updateShoppingCart();
 }
 
+function loadProductsDataBase() {
+  const savedDatabase = localStorage.getItem('productsDataBase');
+  if (savedDatabase) {
+    const parsedDatabase = JSON.parse(savedDatabase);
+    // Actualizar los valores en productsDataBase con los del localStorage
+    for (let i = 0; i < productsDataBase.length; i++) {
+      productsDataBase[i].units = parsedDatabase[i].units;
+    }
+  }
+}
+
+/************************************************************************************************************************/
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadProductsDataBase();
+  loadShoppingCart();
+});

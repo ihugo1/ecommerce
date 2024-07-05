@@ -63,7 +63,7 @@
     font-size: 1.5rem;
     color: var(--white);
 }
-.shopping-cart__close-btn, .shopping-cart__clear-btn{
+.shopping-cart__close-btn, .shopping-cart__clear-btn, .shopping-cart__buy-btn{
     width: 100px;
     height: 50px;
     margin: 20px 0;

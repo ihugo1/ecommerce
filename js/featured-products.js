@@ -35,7 +35,10 @@ export function getFeatured() {
   );
 
   document.querySelectorAll(".product__show-info-btn").forEach(
-    (btn) => btn.addEventListener("click", () =>  createProductModal(btn.getAttribute("product-id")))
+    (btn) => btn.addEventListener("click", () =>  {
+      createProductModal(btn.getAttribute("product-id"));
+      document.body.classList.add("body-overlay");
+    })
   );
   
 }
