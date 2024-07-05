@@ -12,7 +12,6 @@
 
     <!-- NavBar -->
     <nav class="nav-bar">
-
       <div class="nav-bar-left">
         <div class="fashion-store-logo">
           <p class="fashion-logo">Fashion</p>
@@ -23,8 +22,12 @@
       <div class="nav-bar-middle">
         <ul>
           <li><a class="nav-bar-middle__link" href="index.html">Inicio</a></li>
-          <li><a class="nav-bar-middle__link" href="locals.html">Sucursales</a></li>
-          <li><a class="nav-bar-middle__link" href="about-us.html">Sobre Nosotros</a></li>
+          <li>
+            <a class="nav-bar-middle__link" href="locals.html">Sucursales</a>
+          </li>
+          <li>
+            <a class="nav-bar-middle__link" href="about-us.html">Sobre Nosotros</a>
+          </li>
         </ul>
       </div>
 
@@ -36,9 +39,7 @@
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
-
     </nav>
-
 
     <!-- header -->
     <div class="header-catalogue">
@@ -51,18 +52,11 @@
       </div>
     </div>
 
-    <!----------------------------------------------------------------------------------------->
-
     <!-- Catalogue -->
     <div class="catalogue-content">
       <div class="filter-bar">
         <label for="product-dropdown-menu">Filtrar por:</label>
-
-        <select
-          id="products-dropdown-menu"
-          class="products-dropdown-menu"
-          name="product-dropdown-menu"
-        >
+        <select id="products-dropdown-menu" class="products-dropdown-menu" name="product-dropdown-menu">
           <option value="all">Todos</option>
           <option value="shirt">Camisas</option>
           <option value="accesory">Accesorios</option>
@@ -72,12 +66,8 @@
           <option value="dress">Vestidos</option>
           <option value="makeup">Maquillaje</option>
         </select>
-
-        <button id="products-menu-btn" class="products-menu-btn animated-btn">
-          Filtrar
-        </button>
+        <button id="products-menu-btn" class="products-menu-btn animated-btn">Filtrar</button>
       </div>
-
       <div class="products" id="products"></div>
     </div>
 
@@ -96,6 +86,7 @@
       <div class="footer-right">
         <p class="footer__adress">Dirección 1</p>
         <p class="footer__adress">Dirección 2</p>
+        <p class="footer__adress">Dirección 3</p>
       </div>
     </footer>
 
@@ -104,27 +95,25 @@
     <!--Modal-->
     <div class="product-modal"></div>
 
+    <!----------------------------------------------------------------------------------------->
+
     <!--Shopping Cart-->
     <div class="shopping-cart" id="shopping-cart">
       <p class="shopping-cart__title">Mi carrito</p>
       <div class="shopping-cart-list" id="shopping-cart-list"></div>
       <p class="shopping-cart-total" id="shopping-cart-total"></p>
-      <button class="shopping-cart__close-btn animated-btn" id="shopping-cart__close-btn">
-        Cerrar Carrito
-      </button>
-      <button class="shopping-cart__clear-btn" id="shopping-cart__clear-btn">
-        Vaciar Carrito
-      </button>
-      <button class="shopping-cart__buy-btn animated-btn" id="shopping-cart__buy-btn">
-        Comprar
-      </button>
+      <button class="shopping-cart__buy-btn animated-btn" id="shopping-cart__buy-btn">Comprar</button>
+      <button class="shopping-cart__clear-btn" id="shopping-cart__clear-btn">Vaciar Carrito</button>
+      <button class="shopping-cart__close-btn animated-btn" id="shopping-cart__close-btn">Cerrar Carrito</button>
     </div>
+
+    <!----------------------------------------------------------------------------------------->
 
     <!-- side nav -->
     <div class="side-nav" id="side-nav">
       <ul>
         <li>
-          <a href="index.html" class="side-nav__link">Inicio</a>
+          <a href="catalogue.html" class="side-nav__link">Catálogo</a>
         </li>
         <li>
           <a href="locals.html" class="side-nav__link">Sucursales</a>
@@ -139,6 +128,7 @@
     <!----------------------------------------------------------------------------------------->
 
     <!--Scripts-->
-    <script type="module" src="/js/catalogue-scripts.js"></script>
+    <script type="module" src="/js/modules/catalogue-module.js"></script>
+    
   </body>
 </html>

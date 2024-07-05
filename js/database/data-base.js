@@ -1,4 +1,3 @@
-// /js/productDatabase.js
 export let productsDataBase = [
     {
         id: 1, 

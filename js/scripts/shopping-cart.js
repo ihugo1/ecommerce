@@ -1,30 +1,29 @@
-import { productsDataBase } from "./data-base.js";
+import { productsDataBase } from "../database/data-base.js";
+
 if (!localStorage.getItem('productsDataBase')) {
   localStorage.setItem('productsDataBase', JSON.stringify(productsDataBase));
 }
 
-let shoppingCartList = document.getElementById("shopping-cart-list");
-let shoppingCartTotalDiv = document.getElementById("shopping-cart-total");
-let shoppingCartDiv = document.getElementById("shopping-cart");
-let shoppingCartCloseBtn = document.getElementById("shopping-cart__close-btn");
-let shoppingCartOpenBtn = document.getElementById("nav-bar__open-cart-btn");
-let shoppingCartClearBtn = document.getElementById("shopping-cart__clear-btn");
-let shoppingCartBuyBtn = document.getElementById("shopping-cart__buy-btn");
+let $shoppingCartList = document.getElementById("shopping-cart-list");
+let $shoppingCartTotalDiv = document.getElementById("shopping-cart-total");
+let $shoppingCartDiv = document.getElementById("shopping-cart");
+let $shoppingCartCloseBtn = document.getElementById("shopping-cart__close-btn");
+let $shoppingCartOpenBtn = document.getElementById("nav-bar__open-cart-btn");
+let $shoppingCartClearBtn = document.getElementById("shopping-cart__clear-btn");
+let $shoppingCartBuyBtn = document.getElementById("shopping-cart__buy-btn");
 
 let shoppingCartProductsIdCounter;
 let shoppingCart = [];
 let shoppingCartTotal;
 
-/************************************************************************************************************************/
-
 function updateShoppingCart() {
   shoppingCartProductsIdCounter = 0;
   shoppingCartTotal = 0;
-  shoppingCartList.innerHTML = "";
+  $shoppingCartList.innerHTML = "";
 
   for (let product of shoppingCart) {
     product.cartId = shoppingCartProductsIdCounter;
-    shoppingCartList.innerHTML += `
+    $shoppingCartList.innerHTML += `
       <div class="shopping-cart__product">
         <p class="shopping-cart__product-id">Id: ${product.id}</p>
         <p class="shopping-cart__product-name">${product.name}</p>
@@ -38,7 +37,7 @@ function updateShoppingCart() {
     shoppingCartProductsIdCounter++;
   }
 
-  shoppingCartTotalDiv.innerHTML = `Total: ${shoppingCartTotal.toFixed(2)}`;
+  $shoppingCartTotalDiv.innerHTML = `Total: ${shoppingCartTotal.toFixed(2)}`;
 
   let shoppingCartDeleteBtns = document.querySelectorAll(".shopping-cart__remove-btn");
 
@@ -91,16 +90,11 @@ function clearShoppingCart() {
   updateShoppingCart();
 }
 
-/****************************************************EVENT-LISTENERS***************************************************/
+/************************************************************************************************************************/
 
 function toggleShoppingCart() {
-  shoppingCartDiv.classList.toggle("shopping-cart-active");
+  $shoppingCartDiv.classList.toggle("shopping-cart-active");
 }
-
-shoppingCartOpenBtn.addEventListener("click", () => toggleShoppingCart());
-shoppingCartCloseBtn.addEventListener("click", () => toggleShoppingCart());
-shoppingCartClearBtn.addEventListener("click", () => clearShoppingCart());
-shoppingCartBuyBtn.addEventListener("click", () => buyShoppingCart());
 
 /************************************************************************************************************************/
 
@@ -122,6 +116,8 @@ export function loadShoppingCart() {
   updateShoppingCart();
 }
 
+/************************************************************************************************************************/
+
 function loadProductsDataBase() {
   const savedDatabase = localStorage.getItem('productsDataBase');
   if (savedDatabase) {
@@ -139,3 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
   loadProductsDataBase();
   loadShoppingCart();
 });
+
+$shoppingCartOpenBtn.addEventListener("click", () => toggleShoppingCart());
+$shoppingCartCloseBtn.addEventListener("click", () => toggleShoppingCart());
+$shoppingCartClearBtn.addEventListener("click", () => clearShoppingCart());
+$shoppingCartBuyBtn.addEventListener("click", () => buyShoppingCart());

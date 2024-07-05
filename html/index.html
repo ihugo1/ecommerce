@@ -12,19 +12,23 @@
 
     <!-- NavBar -->
     <nav class="nav-bar">
-
       <div class="nav-bar-left">
         <div class="fashion-store-logo">
           <p class="fashion-logo">Fashion</p>
           <p class="store-logo">STORE</p>
         </div>
       </div>
-
       <div class="nav-bar-middle">
         <ul>
-          <li><a class="nav-bar-middle__link" href="catalogue.html">Catálogo</a></li>
-          <li><a class="nav-bar-middle__link" href="locals.html">Sucursales</a></li>
-          <li><a class="nav-bar-middle__link" href="about-us.html">Sobre Nosotros</a></li>
+          <li>
+            <a class="nav-bar-middle__link" href="catalogue.html">Catálogo</a>
+          </li>
+          <li>
+            <a class="nav-bar-middle__link" href="locals.html">Sucursales</a>
+          </li>
+          <li>
+            <a class="nav-bar-middle__link" href="about-us.html">Sobre Nosotros</a>
+          </li>
         </ul>
       </div>
 
@@ -36,10 +40,9 @@
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
-
     </nav>
 
-    <!-- header -->
+    <!-- Header -->
     <div class="header-main">
       <img class="header-main-background" src="/img/banners/banner-main.jpg" />
       <div class="header-main-content">
@@ -48,15 +51,13 @@
       </div>
     </div>
 
-    <!----------------------------------------------------------------------------------------->
-
     <!--Featured-->
     <section class="featured-products">
       <h2 class="featured-products-title">Productos destacados</h2>
       <div class="featured-products-container"></div>
     </section>
 
-    <!--Inscription-->
+    <!--Inscription Form-->
     <section class="suscription">
       <div class="suscription-img-container">
         <img src="/img/main/suscription.jpg" alt="" />
@@ -88,44 +89,28 @@
       <div class="footer-right">
         <p class="footer__adress">Dirección 1</p>
         <p class="footer__adress">Dirección 2</p>
+        <p class="footer__adress">Dirección 3</p>
       </div>
     </footer>
 
     <!----------------------------------------------------------------------------------------->
 
-    <!--Modal-->
+    <!--Product Modal-->
     <div class="product-modal"></div>
+    
+    <!----------------------------------------------------------------------------------------->
 
+    <!--Shopping Cart-->
     <div class="shopping-cart" id="shopping-cart">
       <p class="shopping-cart__title">Mi carrito</p>
       <div class="shopping-cart-list" id="shopping-cart-list"></div>
       <p class="shopping-cart-total" id="shopping-cart-total"></p>
-      <button class="shopping-cart__close-btn animated-btn" id="shopping-cart__close-btn">
-        Cerrar Carrito
-      </button>
-      <button class="shopping-cart__clear-btn" id="shopping-cart__clear-btn">
-        Vaciar Carrito
-      </button>
-      <button class="shopping-cart__buy-btn animated-btn" id="shopping-cart__buy-btn">
-        Comprar
-      </button>
+      <button class="shopping-cart__buy-btn animated-btn" id="shopping-cart__buy-btn">Comprar</button>
+      <button class="shopping-cart__clear-btn" id="shopping-cart__clear-btn">Vaciar Carrito</button>
+      <button class="shopping-cart__close-btn animated-btn" id="shopping-cart__close-btn">Cerrar Carrito</button>
     </div>
 
-    <!-- side nav -->
-    <div class="side-nav" id="side-nav">
-      <ul>
-        <li>
-          <a href="index.html" class="side-nav__link">Inicio</a>
-        </li>
-        <li>
-          <a href="locals.html" class="side-nav__link">Sucursales</a>
-        </li>
-        <li>
-          <a href="about-us.html" class="side-nav__link">Sobre Nosotros</a>
-        </li>
-        <button class="side-nav__btn-close animated-btn" id="side-nav__btn-close">Cerrar</button>
-      </ul>
-    </div>
+    <!----------------------------------------------------------------------------------------->
 
     <!-- side nav -->
     <div class="side-nav" id="side-nav">
@@ -146,6 +131,7 @@
     <!----------------------------------------------------------------------------------------->
 
     <!--Scripts-->
-    <script type="module" src="/js/scripts-main.js"></script>
+    <script type="module" src="/js/modules/main-module.js"></script>
+
   </body>
 </html>
